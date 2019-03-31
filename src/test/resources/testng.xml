@@ -1,0 +1,34 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="MySuite" parallel="tests" thread-count="2">
+	<listeners>
+		<listener class-name="com.dice.base.TestListener"></listener>
+	</listeners>
+	<test name="LoginTest Chrome">
+		<parameter name="browser" value="Chrome"></parameter>
+		<groups>
+			<run>
+				<exclude name="negative"></exclude>
+				<!-- <exclude name="broken"></exclude> -->
+			</run>
+		</groups>
+		<classes>
+			<class name="com.dice.LoginTest">
+				<!-- <methods> <include name="positiveLoginTest"></include> </methods> -->
+			</class>
+			<!-- <class name="com.dice.LoginTest"> <methods> <exclude name="positiveLoginTest"></exclude> </methods> </class> -->
+		</classes>
+	</test>
+	<test name="LoginTest Edge">
+		<parameter name="browser" value="Edge"></parameter>
+		<groups>
+			<run>
+				<exclude name="positive"></exclude>
+				<exclude name="broken"></exclude>
+			</run>
+		</groups>
+		<classes>
+			<class name="com.dice.LoginTest" />
+		</classes>
+	</test>
+</suite>

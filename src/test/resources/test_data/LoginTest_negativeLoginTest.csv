@@ -1,0 +1,4 @@
+number,email,password,description
+1,igor_lipko75@mail.ru,gbuh100co_CE,invalid email
+2,igor_lipko@mail.ru,gbuh111co_CE,invalid password
+3,igor_lipko75@mail.ru,gbuh111co_CE,invalid email and password
